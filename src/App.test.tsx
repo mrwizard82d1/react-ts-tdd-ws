@@ -9,7 +9,7 @@ test("renders hello world", () => {
 });
 
 test("renders heading", () => {
-  render(<Heading name={"React"}/>);
+  render(<Heading />);
   const linkElement = screen.getByText(/hello react/i);
   expect(linkElement).toBeInTheDocument();
 });

@@ -1,6 +1,8 @@
 import React from "react";
 
-export function Heading({name}: {name: string}) {
+export type HeadingProps = { name: string };
+
+export function Heading({name = "React"}: HeadingProps) {
   return <h1>Hello {name}</h1>;
 }
 
