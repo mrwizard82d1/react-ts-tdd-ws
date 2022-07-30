@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App, {Heading} from "./App";
+import App from "./App";
+import {Heading} from "./Heading";
 
 test("renders hello world", () => {
   render(<App />);
