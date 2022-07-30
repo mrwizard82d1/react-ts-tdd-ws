@@ -1,7 +1,7 @@
 import React from "react";
 
-export function Heading() {
-  return <h1>{"Hello React"}</h1>;
+export function Heading({name}: {name: string}) {
+  return <h1>Hello {name}</h1>;
 }
 
 function App() {

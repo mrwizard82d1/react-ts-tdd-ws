@@ -13,3 +13,9 @@ test("renders heading", () => {
   const linkElement = screen.getByText(/hello react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test("render heading with an argument", () => {
+  render(<Heading name={`World`}/>);
+  const linkElement = screen.getByText(/hello world/i);
+  expect(linkElement).toBeInTheDocument();
+});
