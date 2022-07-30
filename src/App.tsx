@@ -1,14 +1,14 @@
 import React from "react";
 
 
-export function label() {
-    return "Hello React"
+export function label(toGreet: string) {
+  return `Hello ${toGreet.toUpperCase()}`;
 }
 
 function App() {
   return (
     <div>
-      <h1>{label()}</h1>
+      <h1>{label("react")}</h1>
     </div>
   );
 }

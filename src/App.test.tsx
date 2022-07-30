@@ -13,5 +13,5 @@ test("renders hello world", () => {
 });
 
 test("generates correct label", () => {
-  expect(label()).toEqual("Hello React")
+  expect(label("react")).toEqual("Hello REACT")
 })
