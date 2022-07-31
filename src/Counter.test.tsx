@@ -32,13 +32,3 @@ test("should increment counter on click", () => {
     fireEvent.click(counter);
     expect(counter).toHaveTextContent(/^1$/);
 });
-
-test("should increment counter by 10 on shift click", () => {
-    const handler = jest.fn();  // Essentially, a mock
-    render(<Counter count={0} onCounterIncrease={handler}/>);
-    const counter = screen.getByRole("counter");
-
-    expect(counter).toHaveTextContent(/^0$/);
-    userEvent.click(counter, {shiftKey: true});
-    expect(counter).toHaveTextContent(/^10$/);
-});
