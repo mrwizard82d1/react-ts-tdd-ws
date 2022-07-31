@@ -10,3 +10,12 @@ test("should render a label and a counter", () => {
   const counter = screen.getByRole("counter");
   expect(counter).toBeInTheDocument();
 });
+
+test("should render a counter with a custom label", () => {
+  render(<Counter label={`Current`} />);
+  const label = screen.getByLabelText("Current");
+  expect(label).toBeInTheDocument();
+
+  const counter = screen.getByRole("counter");
+  expect(counter).toBeInTheDocument();
+});
