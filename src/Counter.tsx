@@ -18,7 +18,7 @@ class Counter extends Component<CounterProps, CounterState> {
 
   // Because React has a type, `MouseEvent`, and generic JavaScript has a type of the same name, I *cannot* destructure
   // the unadorned type as I do with `Component`. Instead, I reference `React.MouseEvent` explicitly.
-  incrementCounter = (_event: React.MouseEvent<HTMLOutputElement, MouseEvent>) => {
+  incrementCounter = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     return this.setState({ count: this.state.count + 1 });
   };
 
@@ -31,9 +31,9 @@ class Counter extends Component<CounterProps, CounterState> {
         <label htmlFor="counter" style={{ margin: "5px" }}>
           {label}
         </label>
-        <output id="counter" role="counter" onClick={this.incrementCounter}>
+        <button id="counter" role="counter" onClick={this.incrementCounter}>
           {count}
-        </output>
+        </button>
       </div>
     );
   }
