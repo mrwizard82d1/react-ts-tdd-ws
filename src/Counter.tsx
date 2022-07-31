@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 
 export type CounterProps = {
   label?: string;
@@ -9,19 +9,18 @@ export type CounterProps = {
 };
 
 const initialState = { count: 0 };
-export type CounterState = Readonly<typeof initialState>;
 
-const Counter = ({ label = "Count", count }: CounterProps) => {
+const Counter = ({
+  label = "Count",
+  count,
+  onCounterIncrease,
+}: CounterProps) => {
   return (
     <div>
       <label htmlFor="counter" style={{ margin: "5px" }}>
         {label}
       </label>
-      <button
-        id="counter"
-        role="counter"
-        // onClick=incrementCounter
-      >
+      <button id="counter" role="counter" onClick={onCounterIncrease}>
         {count}
       </button>
     </div>
