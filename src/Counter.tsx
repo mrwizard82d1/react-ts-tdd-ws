@@ -22,7 +22,7 @@ class Counter extends Component<CounterProps, CounterState> {
 
     return (
       <div>
-        <label htmlFor="counter">{label}</label>
+        <label htmlFor="counter" style={{margin: "5px"}}>{label}</label>
         <output id="counter" role="counter">
           {count}
         </output>
