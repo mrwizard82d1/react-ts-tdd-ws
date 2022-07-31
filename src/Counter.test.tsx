@@ -27,3 +27,10 @@ test("should start counting at zero (0)", () => {
 
   expect(counterValue).toHaveTextContent("0");
 })
+
+test("should start counting at a specified value", () => {
+  render(<Counter start={10}/>);
+  const counterValue = screen.getByRole("counter");
+
+  expect(counterValue).toHaveTextContent("10");
+})
