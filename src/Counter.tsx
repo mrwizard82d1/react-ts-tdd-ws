@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
 export type CounterProps = { label?: string };
-export type CounterState = { count: number };
+
+const initialState = { count: 0 };
+export type CounterState = Readonly<typeof initialState>;
 
 class Counter extends Component<CounterProps, CounterState> {
-  state: CounterState = { count: 0 };
+  readonly state: CounterState = initialState;
 
   render() {
     const { label = "Count" } = this.props;
