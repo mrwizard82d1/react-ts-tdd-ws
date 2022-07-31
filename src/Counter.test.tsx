@@ -1,7 +1,6 @@
 import React from "react";
 import {fireEvent, render, screen} from "@testing-library/react";
 import Counter from "./Counter";
-import counter from "./Counter";
 
 test("should render a label and a counter", () => {
   render(<Counter />);
