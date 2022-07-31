@@ -12,7 +12,7 @@ class Counter extends Component<CounterProps, CounterState> {
   componentDidMount() {
       const { start } = this.props;
       if (start !== undefined) {
-          this.setState({ ...initialState, count:start });
+          this.setState({ count: start});
       }
   }
 
@@ -23,7 +23,9 @@ class Counter extends Component<CounterProps, CounterState> {
     return (
       <div>
         <label htmlFor="counter" style={{margin: "5px"}}>{label}</label>
-        <output id="counter" role="counter">
+        <output id="counter"
+                role="counter"
+                onClick={() => this.setState({ count: this.state.count + 1 })}>
           {count}
         </output>
       </div>

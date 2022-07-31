@@ -30,7 +30,16 @@ test("should start counting at zero (0)", () => {
 
 test("should start counting at a specified value", () => {
   render(<Counter start={10}/>);
-  const counterValue = screen.getByRole("counter");
+  const counter = screen.getByRole("counter");
 
-  expect(counterValue).toHaveTextContent("10");
+  expect(counter).toHaveTextContent("10");
+})
+
+test("should increment counter on click", () => {
+  render(<Counter/>);
+  const counter = screen.getByRole("counter");
+
+  expect(counter).toHaveTextContent("0");
+  fireEvent.click(counter);
+  expect(counter).toHaveTextContent("1");
 })
