@@ -3,24 +3,25 @@ import React from "react";
 export type CounterProps = {
   label?: string;
   count: number;
-  onCounterIncrease: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
+  onCounterIncrease: (isShiftPressed: boolean) => void;
 };
-
-const initialState = { count: 0 };
 
 const Counter = ({
   label = "Count",
   count,
   onCounterIncrease,
 }: CounterProps) => {
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    onCounterIncrease(event.shiftKey);
+  };
   return (
     <div>
       <label htmlFor="counter" style={{ margin: "5px" }}>
         {label}
       </label>
-      <button id="counter" role="counter" onClick={onCounterIncrease}>
+      <button id="counter" role="counter" onClick={handleClick}>
         {count}
       </button>
     </div>

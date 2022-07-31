@@ -28,5 +28,5 @@ test("should increment counter on click", () => {
     const counter = screen.getByRole("counter");
 
     fireEvent.click(counter);
-    expect(handler).toBeCalledTimes(1);
+    expect(handler).toBeCalledWith(false);
 });
