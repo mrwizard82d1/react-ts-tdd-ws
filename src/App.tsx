@@ -5,7 +5,8 @@ import Counter from "./Counter";
 function App() {
   const [count, setCount] = useState(0);
 
-  const incrementCounter = () => setCount(count + 1);
+  const incrementCounter = (isShiftPressed: boolean) =>
+    setCount(count + (isShiftPressed ? 10 : 1));
   return (
     <div>
       <Heading />
